@@ -1,0 +1,24 @@
+create table employee
+(emp_id number(5) not null,
+emp_name varchar(50) not null,
+emp_address varchar(50) not null,
+emp_salary number(10) not null,
+primary key(emp_id),
+dept_id number(5),
+country_id number(5) not null,
+foreign key(dept_id) references dummy_department(dept_id),
+foreign key(country_id) references dummy_countries(country_id)
+);
+ 
+
+create table dummy_department
+(dept_id number(5) not null,
+dept_name varchar(50) not null,
+primary key(dept_id) 
+);
+
+create table dummy_countries
+(country_id number(5) not null,
+country_name varchar(50) not null,
+primary key(country_id) 
+);
