@@ -33,12 +33,12 @@ into dummy_countries(country_id, country_name) values (4, 'India')
 into dummy_countries(country_id, country_name) values (5, 'China')
 select * from dual;
 
-insert all into dummy_countries
-(country_id, country_name) values (1, 'Nepal')
-into dummy_countries(country_id, country_name) values (2, 'USA')
-into dummy_countries(country_id, country_name) values (3, 'UK')
-into dummy_countries(country_id, country_name) values (4, 'India')
-into dummy_countries(country_id, country_name) values (5, 'China')
+insert all into dummy_department
+(dept_id, dept_name) values (1, 'BSC CSIT')
+into dummy_department(dept_id, dept_name) values (2, 'BCA')
+into dummy_department(dept_id, dept_name) values (3, 'BIT')
+into dummy_department(dept_id, dept_name) values (4, 'BSW')
+into dummy_department(dept_id, dept_name) values (5, 'BBA')
 select * from dual;
 
 
