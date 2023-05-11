@@ -1,0 +1,38 @@
+create table employee
+(eid number(5) not null,
+ename varchar(50) not null,
+address varchar(20) not null,
+age number(3) not null,
+primary key(eid) 
+);
+
+insert all into employee
+(eid, ename, address, age) values (1, 'Pujan Dahal', 'Kathmandu', 20)
+into employee(eid, ename, address, age) values (2, 'Gaurav Poudel', 'Lalitpur', 23)
+into employee(eid, ename, address, age) values (3, 'Puja Dahal', 'Bhaktapur', 21)
+select * from dual;
+
+
+create table worker
+(wid number(5) not null,
+ename varchar(50) not null,
+designation varchar(20) not null,
+salary number(8) not null,
+primary key(wid) 
+);
+
+insert all into worker
+(wid, ename, designation, salary) values (100, 'Pujan Dahal', 'Manager', 25000)
+into worker(wid, ename, designation, salary) values (101, 'Gaurav Poudel', 'Staff', 12000)
+into worker(wid, ename, designation, salary) values (102, 'Siddhartha Timalsina', 'Director', 35000)
+select * from dual;
+
+select * from employee inner join worker on employee.ename = worker.ename;
+
+select * from employee left outer join worker on employee.ename = worker.ename;
+
+select * from employee right outer join worker on employee.ename = worker.ename;
+
+select * from employee full outer join worker on employee.ename = worker.ename;
+
+select * from employee natural join worker;
