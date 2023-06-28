@@ -1,0 +1,26 @@
+create table student
+(sid varchar(10) not null,
+name varchar(20) not null,
+address varchar(20) not null,
+primary key(sid)
+);
+
+alter table student
+add(faculty varchar(20) not null);
+
+alter table student
+modify sid number(5);
+
+create table Vidhyarthi 
+as select * from student;
+
+drop table student;
+
+alter table Vidhyarthi
+rename to student;
+
+alter table student
+drop column address;
+
+alter table student
+rename column name to full_name;

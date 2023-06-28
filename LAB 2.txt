@@ -1,0 +1,40 @@
+create table student
+(sid number(5) not null,
+name varchar(40) not null,
+address varchar(40) not null,
+email varchar(20) not null unique,
+faculty varchar(10) default 'BCA',
+primary key(sid)
+);
+
+insert all 
+into student(sid, name, address, email) values (1, 'Pujan Dahal', 'Bhaktapur', 'pujan@gmail.com')
+into student(sid, name, address, email) values (2, 'Gaurav Poudel', 'Bhaktapur', 'gaurav@gmail.com')
+into student(sid, name, address, email, faculty) values (3, 'Suyog Gautam', 'Kathmandu', 'suyog@gmail.com', 'BscCSIT')
+into student(sid, name, address, email, faculty) values (4, 'Siddhartha Timalsina', 'Lalitpur', 'sidd@gmail.com', 'BBS')
+into student(sid, name, address, email, faculty) values (5, 'Arbin Mahaju', 'Bhaktapur', 'arbin@gmail.com', 'BSW')
+select * from dual;
+
+select * from student;
+
+update student set address='Pokhara' where sid = 1;
+
+delete from student where sid = 5;
+
+create sequence student_seq
+minvalue 101
+maxvalue 999
+start with 101
+increment by 1
+cache 20;
+
+insert into student (sid, name, address, email)
+values (student_seq.nextval, 'Pujan Dahal', 'Bhaktapur', 'pujan1@gmail.com');
+
+insert into student (sid, name, address, email)
+values (student_seq.nextval, 'Gaurav Poudel', 'Kathmandu', 'gaurav1@gmail.com');
+
+insert into student (sid, name, address, email)
+values (student_seq.nextval, 'Arbin Mahaju', 'Lalitpur', 'arbin1@gmail.com');
+
+select sid, name, faculty from student;
